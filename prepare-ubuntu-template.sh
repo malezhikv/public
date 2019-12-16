@@ -16,9 +16,9 @@ fi
 set -v
 
 #update apt-cache
-export DEBIAN_FRONTEND=noninteractive
-apt-get update
-apt-get -y upgrade
+#export DEBIAN_FRONTEND=noninteractive
+#apt-get update
+#apt-get -y upgrade
 
 #install packages
 #apt install -y open-vm-tools
@@ -85,6 +85,9 @@ sed -i 's/optional: true/dhcp-identifier: mac/g' /etc/netplan/50-cloud-init.yaml
 
 # cleans out all of the cloud-init cache / logs - this is mainly cleaning out networking info
 sudo cloud-init clean --logs
+
+# change password for admin1
+echo 'admin1:P@ssw0rd'|chpasswd
 
 #cleanup shell history
 cat /dev/null > ~/.bash_history && history -c
