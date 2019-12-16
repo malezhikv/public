@@ -16,8 +16,9 @@ fi
 set -v
 
 #update apt-cache
-apt update -y
-apt upgrade -y
+export DEBIAN_FRONTEND=noninteractive
+apt-get update
+apt-get -y upgrade
 
 #install packages
 #apt install -y open-vm-tools
