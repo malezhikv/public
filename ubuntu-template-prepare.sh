@@ -42,7 +42,7 @@ rm -rf /var/tmp/*
 rm -f /etc/ssh/ssh_host_*
 
 #add check for ssh keys on reboot...regenerate if neccessary
-cat << 'EOL' | sudo tee /etc/rc.local
+cat << 'EOL' | tee /etc/rc.local
 #!/bin/sh -e
 #
 # rc.local
@@ -68,7 +68,7 @@ chmod +x /etc/rc.local
 
 #reset hostname
 # prevent cloudconfig from preserving the original hostname
-sed -i 's/preserve_hostname: false/preserve_hostname: true/g' /etc/cloud/cloud.cfg
+#sed -i 's/preserve_hostname: false/preserve_hostname: true/g' /etc/cloud/cloud.cfg
 truncate -s0 /etc/hostname
 hostnamectl set-hostname localhost
 
@@ -80,11 +80,11 @@ apt clean
 sed -i 's/optional: true/dhcp-identifier: mac/g' /etc/netplan/50-cloud-init.yaml
 
 # cleans out all of the cloud-init cache / logs - this is mainly cleaning out networking info
-sudo cloud-init clean --logs
+#sudo cloud-init clean --logs
 
 #cleanup shell history
-cat /dev/null > ~/.bash_history && history -c
-history -w
+cat /dev/null > ~/.bash_history
+history -c
 
 #shutdown
 shutdown -h now
