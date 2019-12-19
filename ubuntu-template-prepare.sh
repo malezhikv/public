@@ -6,7 +6,7 @@
 # TESTED ON UBUNTU 18.04 LTS
 
 # SETUP & RUN
-# curl -sL https://raw.githubusercontent.com/malezhikv/public/master/prepare-ubuntu-template.sh | sudo -E bash -
+# curl -sL https://raw.githubusercontent.com/malezhikv/public/master/ubuntu-template-prepare.sh | sudo -E bash -
 
 if [ `id -u` -ne 0 ]; then
 	echo Need sudo
