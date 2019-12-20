@@ -20,9 +20,6 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get -y upgrade
 
-#install packages
-#apt install -y open-vm-tools
-
 #Stop services for cleanup
 service rsyslog stop
 
@@ -56,9 +53,7 @@ cat << 'EOL' | tee /etc/rc.local
 #
 # By default this script does nothing.
 # dynamically create hostname (optional)
-#if hostname | grep localhost; then
-#    hostnamectl set-hostname "$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '')"
-#fi
+
 test -f /etc/ssh/ssh_host_rsa_key || dpkg-reconfigure openssh-server
 exit 0
 EOL
@@ -67,8 +62,6 @@ EOL
 chmod +x /etc/rc.local
 
 #reset hostname
-# prevent cloudconfig from preserving the original hostname
-#sed -i 's/preserve_hostname: false/preserve_hostname: true/g' /etc/cloud/cloud.cfg
 truncate -s0 /etc/hostname
 hostnamectl set-hostname localhost
 
@@ -79,8 +72,8 @@ apt clean
 # also look in /etc/netplan for other config files
 sed -i 's/optional: true/dhcp-identifier: mac/g' /etc/netplan/50-cloud-init.yaml
 
-# cleans out all of the cloud-init cache / logs - this is mainly cleaning out networking info
-#sudo cloud-init clean --logs
+# generate random root password
+echo "root:$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '')" | chpasswd
 
 #cleanup shell history
 cat /dev/null > ~/.bash_history
