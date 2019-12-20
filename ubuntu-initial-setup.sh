@@ -54,6 +54,8 @@ chmod 0600 "${home_directory}/.ssh/authorized_keys"
 chown --recursive "${USERNAME}":"${USERNAME}" "${home_directory}/.ssh"
 
 # Disable root SSH login with password
+passwd --delete root
+passwd --lock root
 sed --in-place 's/^PermitRootLogin.*/PermitRootLogin prohibit-password/g' /etc/ssh/sshd_config
 if sshd -t -q; then
     systemctl restart sshd
