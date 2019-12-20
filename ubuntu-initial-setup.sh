@@ -31,7 +31,6 @@ OTHER_PUBLIC_KEYS_TO_ADD=(
 ####################
 
 # Add sudo user and grant privileges
-#useradd --create-home --shell "/bin/bash" --groups sudo "${USERNAME}"
 useradd -m -p "$(openssl passwd -1 ${PASSWORD})" -s /bin/bash -G sudo "${USERNAME}"
 
 # Create SSH directory for sudo user
