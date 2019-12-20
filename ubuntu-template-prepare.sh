@@ -73,7 +73,7 @@ apt clean
 sed -i 's/optional: true/dhcp-identifier: mac/g' /etc/netplan/50-cloud-init.yaml
 
 # generate random root password
-echo "root:$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '')" | chpasswd
+# echo "root:$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '')" | chpasswd
 
 #cleanup shell history
 cat /dev/null > ~/.bash_history
