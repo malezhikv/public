@@ -1,5 +1,6 @@
 #!/bin/bash
 # inspired by https://gist.github.com/efeldhusen/4bea2031525203b1658b444f4709c12c (thanks!)
+# curl -sL https://raw.githubusercontent.com/malezhikv/public/master/ubuntu-template-prepare.sh | sudo -E bash -
 #Paths are for Centos 7.x
 
 #stop logging services
@@ -22,11 +23,8 @@
 /bin/cat /dev/null > /var/log/lastlog
 /bin/cat /dev/null > /var/log/grubby
 
-#remove udev hardware rules
-/bin/rm -f /etc/udev/rules.d/70*
-
 #remove uuid from ifcfg scripts
-/bin/sed -i '/^(HWADDR|UUID)=/d' /etc/sysconfig/network-scripts/ifcfg-ens192
+/bin/sed -i '/^(HWADDR|UUID)=/d' /etc/sysconfig/network-scripts/ifcfg-eth0
 
 #remove SSH host keys
 /bin/rm -f /etc/ssh/*key*
