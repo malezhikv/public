@@ -32,5 +32,6 @@
 #remove root users shell history
 /bin/rm -f ~root/.bash_history
 unset HISTFILE
+history -c
 
 poweroff
