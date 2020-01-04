@@ -35,8 +35,9 @@
 /bin/rm -f /etc/ssh/*key*
 
 #remove root users shell history
-/bin/rm -f ~root/.bash_history
-unset HISTFILE
+#/bin/rm -f ~root/.bash_history
+cat /dev/null > ~/.bash_history
+#unset HISTFILE
 history -c
 
 poweroff
