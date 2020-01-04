@@ -5,7 +5,7 @@
 
 #update
 /usr/bin/yum update -y
-
+/usr/bin/yum autoremove -y
 
 #stop logging services
 /sbin/service rsyslog stop
