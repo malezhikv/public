@@ -33,6 +33,4 @@
 /bin/rm -f ~root/.bash_history
 unset HISTFILE
 
-#remove root users SSH history
-/bin/rm -rf ~root/.ssh/
 poweroff
