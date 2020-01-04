@@ -1,4 +1,3 @@
-#!/bin/bash -i
 # inspired by https://gist.github.com/efeldhusen/4bea2031525203b1658b444f4709c12c (thanks!)
 # curl -sL https://raw.githubusercontent.com/malezhikv/public/master/centos-template-prepare.sh | bash
 #Paths are for Centos 7.x
