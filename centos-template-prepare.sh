@@ -8,7 +8,7 @@
 /sbin/service auditd stop
 
 #remove old kernels
-/usr/bin/package-cleanup --oldkernels --count=1
+/usr/bin/package-cleanup --oldkernels --count=1 -y
 
 #clean yum cache
 /usr/bin/yum clean all
