@@ -3,9 +3,14 @@
 # curl -sL https://raw.githubusercontent.com/malezhikv/public/master/centos-template-prepare.sh | bash
 #Paths are for Centos 7.x
 
+#update
+/usr/bin/yum update -y
+
+
 #stop logging services
 /sbin/service rsyslog stop
 /sbin/service auditd stop
+
 
 #remove old kernels
 /usr/bin/package-cleanup --oldkernels --count=1 -y -q
