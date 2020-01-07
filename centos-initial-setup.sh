@@ -1,6 +1,6 @@
 #
 # Insired by https://raw.githubusercontent.com/do-community/automated-setups/master/Ubuntu-18.04/initial_server_setup.sh
-#
+# curl -sL https://raw.githubusercontent.com/malezhikv/public/master/centos-template-prepare.sh | sudo -E bash -
 
 set -euo pipefail
 
