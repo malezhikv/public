@@ -3,7 +3,7 @@
 #### WARNING PIPING TO BASH IS STUPID: DO NOT USE THIS
 ######################################################
 # modified from: jcppkkk/prepare-ubuntu-template.sh
-# TESTED ON UBUNTU 18.04 LTS
+# TESTED ON UBUNTU 18.04 LTS / 20.04 LTS
 
 # SETUP & RUN
 # curl -sL https://raw.githubusercontent.com/malezhikv/public/master/ubuntu-template-prepare.sh | sudo -E bash -
