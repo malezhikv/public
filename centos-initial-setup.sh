@@ -58,4 +58,4 @@ if sshd -t -q; then
     systemctl restart sshd
 fi
 
-history -cw
+cat /dev/null > ~/.bash_history && history -c && exit
