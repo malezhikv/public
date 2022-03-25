@@ -37,6 +37,6 @@
 #/bin/rm -f ~root/.bash_history
 cat /dev/null > ~/.bash_history
 #unset HISTFILE
-history -cw
+history -c
 
 poweroff
