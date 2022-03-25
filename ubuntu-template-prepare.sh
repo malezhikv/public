@@ -77,7 +77,7 @@ sed -i 's/optional: true/dhcp-identifier: mac/g' /etc/netplan/50-cloud-init.yaml
 
 #cleanup shell history
 cat /dev/null > ~/.bash_history
-history -cw
+history -c
 
 #shutdown
 shutdown -h now
