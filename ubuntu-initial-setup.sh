@@ -31,6 +31,7 @@ OTHER_PUBLIC_KEYS_TO_ADD=(
 ####################
 
 # Add sudo user and grant privileges
+userdel "${USERNAME}"
 useradd -m -p "$(openssl passwd -1 ${PASSWORD})" -s /bin/bash -G sudo "${USERNAME}"
 
 # Create SSH directory for sudo user
