@@ -16,7 +16,7 @@ PASSWORD=password
 
 # Whether to copy over the root user's `authorized_keys` file to the new sudo
 # user.
-COPY_AUTHORIZED_KEYS_FROM_ROOT=true
+COPY_AUTHORIZED_KEYS_FROM_ROOT=false
 
 # Additional public keys to add to the new sudo user
 # OTHER_PUBLIC_KEYS_TO_ADD=(
@@ -24,6 +24,7 @@ COPY_AUTHORIZED_KEYS_FROM_ROOT=true
 #     "ssh-rsa AAAAB..."
 # )
 OTHER_PUBLIC_KEYS_TO_ADD=(
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0CJL1hTFAOOjNjaNs+ezN+laLRI9a6MYd5f6XrAYEyViUYmP+37mm66faVKMw6An9+LH0Tr/eQMmbwOyt1RNnJxLEE7UrSR0dRvki8hCf1WFplqirS5m5M9P1ZZ0/X/EDigghCS54j7XE7AgDgsuK7k5XCg19N49aUfF3jzdCSvcQFJMaEIn/MIL+OMCQJl/uoDAEd89cR3+AgHk1mV6RGAud3TrXLy1ko5CJtQ83UQ/bss3D6PSrBZr0DfxQcrDx4IFLkgkvqOY98uv54BWpFC7aDusHommR6JFR3TLB/fKpOjJuucfUTfNhTTGYtUEvfN2HwfFF3mqyNtdenTRl oblako-support-key"
 )
 
 ####################
