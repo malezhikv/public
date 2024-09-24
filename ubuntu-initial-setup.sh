@@ -31,6 +31,8 @@ OTHER_PUBLIC_KEYS_TO_ADD=(
 ####################
 
 # Add sudo user and grant privileges
+userdel ubuntu
+rm -rf /home/ubuntu
 userdel "${USERNAME}"
 useradd -m -p "$(openssl passwd -1 ${PASSWORD})" -s /bin/bash -G sudo "${USERNAME}"
 
