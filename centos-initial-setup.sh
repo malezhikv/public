@@ -54,6 +54,7 @@ chown --recursive "${USERNAME}":"${USERNAME}" "${home_directory}/.ssh"
 passwd --delete root
 passwd --lock root
 sed --in-place 's/^#PermitRootLogin.*/PermitRootLogin without-password/g' /etc/ssh/sshd_config
+sed --in-place 's/^PermitRootLogin.*/PermitRootLogin without-password/g' /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 if sshd -t -q; then
     systemctl restart sshd
 fi
