@@ -29,7 +29,7 @@
 
 #remove uuid from ifcfg scripts
 /bin/sed -i '/^(HWADDR|UUID)=/d' /etc/sysconfig/network-scripts/ifcfg-eth0
-
+/bin/sed -i '/^uuid=/d' /etc/NetworkManager/system-connections/eth0.nmconnection
 #remove SSH host keys
 /bin/rm -f /etc/ssh/*key*
 
